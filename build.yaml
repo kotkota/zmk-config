@@ -43,7 +43,7 @@ include:
     shield: keyball61_left
     artifact-name: keyball_left
 
-  - board: nice_nano_v2
+  - board: nrfmicro_13
     shield: keyball61_right
     artifact-name: keyball_right
 
