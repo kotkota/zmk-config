@@ -14,16 +14,16 @@ layers:
   - P
   - ⌦
   - Ctrl
-  - {t: A, h: Gui}
-  - {t: S, h: Alt}
-  - {t: D, h: Ctrl}
-  - {t: F, h: LEFT SHIFT}
+  - {t: A, h: LEFT SHIFT}
+  - {t: S, h: Ctrl}
+  - {t: D, h: Alt}
+  - {t: F, h: Gui}
   - G
   - H
-  - {t: J, h: RIGHT SHIFT}
-  - {t: K, h: Ctrl}
-  - {t: L, h: Alt}
-  - {t: ;, h: Gui}
+  - {t: J, h: Gui}
+  - {t: K, h: Alt}
+  - {t: L, h: Ctrl}
+  - {t: ;, h: RIGHT SHIFT}
   - ''''
   - Shift
   - Z
@@ -344,3 +344,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+combos:
+- p: [29, 28]
+  k: Alt+Ctl+↹
+  l: [Base, Game]
