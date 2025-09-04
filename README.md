@@ -1,8 +1,7 @@
 # zmk-config
-Edited using https://nickcoutsos.github.io/keymap-editor/
+
+## Keyball61
+![Keymap](assets/keymap-drawer/keyball61.svg)
 
 ## Sofle
 ![Keymap](assets/keymap-drawer/sofle.svg)
-
-## Corne
-![Keymap](assets/keymap-drawer/corne.svg)
