@@ -1,0 +1,113 @@
+/ {
+  macros {
+
+      upd_fw_l: upd_fw {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(LC(LA(LS(NUMBER_1)))) &bootloader>;
+      };
+
+      upd_fw_r: upd_fw_r {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(LC(LA(LS(NUMBER_2)))) &bootloader>;
+      };
+
+      equals_qoute: equals_qoute {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp EQUAL &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+      };
+
+      par: par {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+          tap-ms = <50>;
+      };
+
+      bkt: bkt {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings =
+              <&macro_wait_time 50>,
+              <&ru_off>,
+              <&macro_wait_time 10>,
+              <&kp LBKT &kp RBKT &kp LEFT>;
+
+          label = "BKT";
+      };
+
+      brc: brc {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings =
+              <&macro_wait_time 50>,
+              <&ru_off>,
+              <&macro_wait_time 10>,
+              <&kp LBRC &kp RBRC &kp LEFT>;
+      };
+
+      ru_on: to_ru {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&tog_on 1 &kp LS(LA(LC(LG(N))))>;
+      };
+
+      ru_off: to_en {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&tog_off 1 &kp LS(LA(LC(LG(M))))>;
+      };
+
+      tag_open: html_tag_open {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings =
+              <&macro_wait_time 50>,
+              <&ru_off>,
+              <&macro_wait_time 10>,
+              <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>;
+
+          label = "HTML_TAG_OPEN";
+      };
+
+      tag_close: html_tag {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings =
+              <&ru_off>,
+              <&macro_wait_time 10>,
+              <&kp LESS_THAN &kp GREATER_THAN &kp LEFT &kp SLASH>;
+      };
+
+      macro_double: macro_double {
+          compatible = "zmk,behavior-macro-one-param";
+          #binding-cells = <1>;
+          bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &kp MACRO_PLACEHOLDER &kp LEFT>;
+          label = "PARAMETRIC_PAIR";
+      };
+
+      macro_pair: macro_pair {
+          compatible = "zmk,behavior-macro-two-param";
+          #binding-cells = <2>;
+          bindings =
+              <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+              <&macro_press>,
+              <&macro_param_2to1 &hold_sym_left MACRO_PLACEHOLDER 0>,
+              <&macro_pause_for_release>,
+              <&macro_release>,
+              <&macro_param_2to1 &hold_sym_left MACRO_PLACEHOLDER 0>,
+              <&macro_tap>;
+
+          label = "MACRO_P";
+      };
+
+      sym_left: sym_left {
+          compatible = "zmk,behavior-macro-one-param";
+          #binding-cells = <1>;
+          bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &kp LEFT>;
+          label = "sym_left";
+      };
+  };
+};

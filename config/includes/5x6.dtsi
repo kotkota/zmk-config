@@ -7,31 +7,30 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define ___ &trans
-#define BASE 0
-#define GAME 1
-#define NAV 2
-#define MACRO 3
-#define SYMBOL 4
-#define NUM 5
-#define FUNC 6
-#define MOUSE 7
+#define DFLT   0
+#define RU     1
+#define GAME   2
+#define NUMB   3
+#define FUNC   4
+#define MEDIA  5
+#define STCKY  6
+#define SYS    7
+
+&lt { quick-tap-ms = <250>; };
+
+&mt {
+    hold-trigger-on-release;
+    flavor = "balanced";
+    quick-tap-ms = <250>;
+};
+
+&soft_off { hold-time-ms = <2000>; };
 
 #include "combos.dtsi"
+#include "macros.dtsi"
+#include "behaviors.dtsi"
 
 / {
-    behaviors {
-        hrm: hrm {
-            label = "hrm";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            quick-tap-ms = <125>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
     sensors { triggers-per-rotation = <20>; };
 };
 
@@ -40,92 +39,92 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "Base";
+            label = "Default";
             bindings = < LAYER_FROM64( \
-&kp ESCAPE,  &kp N1,       &kp N2,       &kp N3,        &kp N4,             &kp N5,                                          &kp N6,             &kp N7,              &kp N8,        &kp N9,       &kp N0,          &kp BACKSPACE,
-&kp TAB,     &kp Q,        &kp W,        &kp E,         &kp R,              &kp T,                                           &kp Y,              &kp U,               &kp I,         &kp O,        &kp P,           &kp DEL,
-&kp LCTRL,   &hrm LEFT_SHIFT A,  &hrm LCTRL S,  &hrm LALT D,  &hrm LGUI F,  &kp G,                                           &kp H,              &hrm RGUI J,  &hrm RALT K,  &hrm RCTRL L,  &hrm RIGHT_SHIFT SEMI,  &kp SQT,
-&kp LSHFT,   &kp Z,        &kp X,        &kp C,         &kp V,              &kp B,          &tog GAME,      &kp C_MUTE,      &kp N,              &kp M,               &kp COMMA,     &kp DOT,      &kp FSLH,        &kp RSHFT,
-&kp LCTRL,   &kp LALT,     &trans,       &trans,        &lt NUM ESCAPE,     &lt MOUSE SPACE,&lt MACRO TAB,  &lt SYMBOL ENTER,&lt NAV BACKSPACE,  &lt FUNC DEL,        &trans,        &trans,       &kp F13,         &kp F14
+&kp ESCAPE,           &kp N1,       &kp N2,       &kp N3,      &kp N4,        &kp N5,         &kp N6,          &kp N7,          &kp N8,         &kp N9,          &kp N0,           &kp BACKSPACE,
+&lt SYS ESC,          &mt EXCL Q,   &kp W,        &kp E,       &kp R,         &kp T,          &kp Y,           &kp U,           &kp I,          &kp O,           &kp P,            &kp LBKT,
+&mt LC(LA(LCMD)) TAB, &mt LSHIFT A, &mtl LCTRL S, &mtl LALT D, &mtl LCMD F,   &kp G,          &kp H,           &mtr RCMD J,     &mtr RALT K,    &mtr RCTRL L,    &mtr RSHIFT SEMI, &mt LC(LA(LCMD)) SQT,
+&lt MEDIA GRAVE,      &mt CAPS Z,   &kp X,        &kp C,       &kp V,         &kp B,          &trans,          &kp C_MUTE,      &kp N,          &kp M,           &kp COMMA,        &kp DOT,     &mt QMARK SLASH, &lt MEDIA BSLH,
+&trans,               &trans,       &trans,       &trans,      &lt FUNC BSPC, &lt NUMB SPACE, &lt STCKY ENTER, &lt STCKY ENTER, &lt NUMB SPACE, &lt FUNC BSPC,   &trans,           &trans,      &trans,          &trans
             )>;
 
             sensor-bindings = <&inc_dec_kp LC(Y) LC(Z) &inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
+        ru {
+            label = "Russian";
+            bindings = < LAYER_FROM64( \
+&trans, &trans, &trans, &trans, &trans, &trans,                                          &trans, &trans, &trans, &trans, &trans, &trans,
+&trans, &trans, &trans, &trans, &trans, &trans,                                         &trans, &trans, &trans, &ru_z, &ru_ha, &trans,
+&trans, &trans, &trans, &trans, &trans, &trans,                                         &trans, &trans, &trans, &trans, &trans, &mt RS(NUMBER_8) RS(NUMBER_5),
+&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans,                        &trans, &trans, &trans, &trans, &mt QMARK APOS, &trans,
+&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans,                        &trans, &trans, &trans, &trans, &trans, &trans
+            )>;
+        };
+
         game {
             label = "Game";
             bindings = < LAYER_FROM64( \
-&kp ESCAPE,  &trans,  &trans,  &trans,  &trans,    &trans,                        &trans,  &trans,  &trans,  &trans,  &trans,  &trans,
-&kp TAB,     &trans,  &trans,  &trans,  &trans,    &trans,                        &trans,  &trans,  &trans,  &trans,  &trans,  &trans,
-&kp HOME,    &kp A,   &kp S,   &kp D,   &kp F,     &trans,                        &trans,  &trans,  &trans,  &trans,  &trans,  &trans,
-&trans,      &trans,  &trans,  &trans,  &trans,    &trans,   &tog GAME,  &trans,  &trans,  &trans,  &trans,  &trans,  &trans,  &trans,
-&trans,      &trans,  &trans,  &trans,  &mo FUNC,  &kp SPACE,&kp LCTRL,  &trans,  &trans,  &trans,  &trans,  &trans,  &trans,  &trans
+&trans, &trans, &trans, &trans, &trans, &trans,                                          &trans, &trans, &trans, &trans, &trans, &trans,
+&kp ESC, &kp TAB, &kp Q, &kp W, &kp E, &kp R,                                          &kp Y, &kp U, &kp I, &kp O, &kp P, &kp LBKT,
+&kp B, &kp LSHFT, &kp A, &kp S, &kp D, &kp F,                                          &kp H, &kp J, &kp K, &kp L, &kp SEMI, &kp SQT,
+&lt NUMB ENTER, &kp LCTRL, &kp Z, &kp X, &kp C, &kp V, &trans, &trans,               &kp N, &kp M, &kp COMMA, &kp DOT, &kp FSLH, &kp BSLH,
+&trans, &trans, &trans, &trans, &mt H T, &kp SPACE, &kp G, &kp BSPC,                 &kp LALT, &kp LCMD, &trans, &trans, &trans, &trans
             )>;
         };
 
-        nav {
-            label = "Navigation";
+        num {
+            label = "Num / Nav";
             bindings = < LAYER_FROM64( \
-&trans,  &trans,        &trans,         &trans,        &trans,        &trans,                        &trans,      &kp F13,     &kp F14,           &trans,            &trans,      &trans,
-&trans,  &bt BT_SEL 0,  &bt BT_SEL 1,   &bt BT_SEL 2,  &bt BT_SEL 3,  &bt BT_CLR,                    &out OUT_TOG,&kp K_PREV,  &kp K_PLAY_PAUSE,  &kp K_PLAY_PAUSE,  &kp K_NEXT,  &trans,
-&trans,  &trans,        &trans,         &trans,        &trans,        &caps_word,                    &caps_word,  &kp LEFT,    &kp DOWN,          &kp UP,            &kp RIGHT,   &trans,
-&trans,  &trans,        &trans,         &trans,        &trans,        &trans,      &trans,  &trans,  &trans,      &kp HOME,    &kp PG_DN,         &kp PG_UP,         &kp END,     &trans,
-&trans,  &trans,        &trans,         &trans,        &trans,        &trans,      &trans,  &trans,  &trans,      &trans,      &trans,            &trans,            &trans,      &trans
+&trans, &trans, &trans, &trans, &trans, &trans,                                          &trans, &trans, &trans, &trans, &trans, &trans,
+&trans, &none, &kp N7, &kp N8, &kp N9, &mt KP_ASTERISK PLUS,                          &kp HOME, &kp LA(LEFT), &kp UP, &kp LA(RIGHT), &kp END, &none,
+&trans, &mt LSHIFT SEMI, &mt LCTRL N4, &mt LALT N5, &mt LCMD N6, &mt KP_DIVIDE MINUS, &kp PG_UP, &kp LEFT, &kp DOWN, &kp RIGHT, &none, &none,
+&trans, &kp KP_EQUAL, &kp N1, &kp N2, &kp N3, &kp N0, &trans, &trans,                &kp PG_DN, &kp LG(LBKT), &kp LG(RBKT), &kp RS(RC(TAB)), &kp RC(TAB), &trans,
+&trans, &trans, &trans, &trans, &trans, &trans, &none, &trans,                         &trans, &trans, &trans, &trans, &trans, &trans
             )>;
         };
 
-        macro {
-            label = "Macro";
+        symb {
+            label = "FN / Sym";
             bindings = < LAYER_FROM64( \
-&bootloader,  &bt BT_SEL 0,        &bt BT_SEL 1,   &bt BT_SEL 2,  &bt BT_SEL 3,  &bt BT_CLR,                &trans,  &trans,          &trans,  &trans,  &trans,  &trans,
-&trans,       &trans,              &trans,         &trans,        &trans,        &trans,                    &trans,  &studio_unlock,  &trans,  &trans,  &trans,  &trans,
-&trans,       &kp LC(LS(ESCAPE)),  &kp LS(LG(S)),  &trans,        &trans,        &kp LA(LC(G)),             &trans,  &trans,          &trans,  &trans,  &trans,  &trans,
-&trans,       &trans,              &trans,         &trans,        &trans,        &trans,  &trans,  &trans,  &trans,  &trans,          &trans,  &trans,  &trans,  &trans,
-&trans,       &trans,              &trans,         &trans,        &trans,        &trans,  &trans,  &trans,  &trans,  &trans,          &trans,  &trans,  &trans,  &trans
+&trans, &trans, &trans, &trans, &trans, &trans,                                          &trans, &trans, &trans, &trans, &trans, &trans,
+&kp F1, &kp F2, &kp F3, &kp F4, &kp F5, &kp F6,                                        &kp EXCL, &kp AT, &kp POUND, &kp DLLR, &kp PERCENT, &trans,
+&kp F7, &kp F8, &kp F9, &kp F10, &kp F11, &kp F12,                                     &kp CARET, &kp AMPS, &kp ASTRK, &kp LPAR, &kp RPAR, &trans,
+&mt QMARK SLASH, &macro_pair LPAR RPAR, &macro_pair LT GT, &macro_pair LBKT RBKT, &macro_pair LBRC RBRC, &mt PIPE BSLH, &trans, &trans, &mt BSLH PIPE, &kp LBRC, &kp RBRC, &kp LBKT, &kp RBKT, &kp QMARK,
+&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans,                        &trans, &trans, &trans, &trans, &trans, &trans
             )>;
         };
 
-        symbol {
-            label = "Symbol";
+        media {
+            label = "Shortcuts";
             bindings = < LAYER_FROM64( \
-&trans,  &trans,            &trans,         &trans,            &trans,             &trans,                        &tog GAME,  &trans,      &trans,                &trans,                 &ext_power EP_TOG,  &bootloader,
-&trans,  &kp SINGLE_QUOTE,  &kp LESS_THAN,  &kp GREATER_THAN,  &kp DOUBLE_QUOTES,  &kp PERIOD,                    &kp AMPS,   &kp UNDER,   &kp LEFT_BRACKET,      &kp RIGHT_BRACKET,      &kp PERCENT,        &trans,
-&trans,  &kp EXCL,          &kp MINUS,      &kp PLUS,          &kp EQUAL,          &kp HASH,                      &kp PIPE,   &kp COLON,   &kp LEFT_PARENTHESIS,  &kp RIGHT_PARENTHESIS,  &kp QUESTION,       &trans,
-&trans,  &kp CARET,         &kp SLASH,      &kp STAR,          &kp BACKSLASH,      &kp UNDER,   &trans,  &trans,  &kp TILDE,  &kp DOLLAR,  &kp LEFT_BRACE,        &kp RIGHT_BRACE,        &kp AT,             &trans,
-&trans,  &trans,            &trans,         &trans,            &trans,             &trans,      &trans,  &trans,  &trans,     &trans,      &trans,                &trans,                 &trans,             &trans
+&trans, &trans, &trans, &trans, &trans, &trans,                                          &trans, &trans, &trans, &trans, &trans, &trans,
+&none, &kp LS(LG(N1)), &kp LS(LG(N2)), &kp LG(LS(N3)), &kp LS(LG(N4)), &kp LS(LG(N5)), &none, &none, &none, &playnp, &kp C_VOL_DN, &kp C_VOL_UP,
+&none, &kp LC(LEFT), &kp LC(RIGHT), &none, &none, &none,                              &none, &none, &none, &none, &none, &none,
+&none, &kp LG(Z), &kp LG(LS(Z)), &none, &none, &none, &trans, &trans,                &none, &none, &none, &none, &none, &none,
+&trans, &trans, &trans, &trans, &kp DEL, &none, &none, &none,                         &none, &kp DEL, &trans, &trans, &trans, &trans
             )>;
         };
 
-        number {
-            label = "Number";
+        sticky {
+            label = "Sticky mods";
             bindings = < LAYER_FROM64( \
-&trans,        &kp F1,        &kp F2,        &kp F3,        &kp F4,        &kp F5,                    &trans,        &trans,        &trans,        &trans,        &trans,        &trans,
-&trans,        &kp NUMBER_7,  &kp NUMBER_8,  &kp NUMBER_9,  &kp NUMBER_0,  &trans,                    &trans,        &kp NUMBER_7,  &kp NUMBER_8,  &kp NUMBER_9,  &trans,        &trans,
-&kp NUMBER_0,  &kp NUMBER_4,  &kp NUMBER_5,  &kp NUMBER_6,  &kp NUMBER_0,  &trans,                    &kp NUMBER_0,  &kp NUMBER_4,  &kp NUMBER_5,  &kp NUMBER_6,  &kp NUMBER_0,  &trans,
-&kp ENTER,     &kp NUMBER_1,  &kp NUMBER_2,  &kp NUMBER_3,  &kp ENTER,     &trans,  &trans,  &trans,  &kp ENTER,     &kp NUMBER_1,  &kp NUMBER_2,  &kp NUMBER_3,  &kp ENTER,     &trans,
-&trans,        &trans,        &trans,        &trans,        &trans,        &trans,  &trans,  &trans,  &trans,        &trans,        &trans,        &trans,        &trans,        &trans
+&trans, &trans, &trans, &trans, &trans, &trans,                                          &trans, &trans, &trans, &trans, &trans, &trans,
+&none, &none, &kp LG(LEFT), &kp LG(RIGHT), &kp LG(R), &kp LG(T),                      &none, &mkp MB1, &mkp MB3, &mkp MB2, &none, &none,
+&sk LC(LA(LCMD)), &sk LSHIFT, &sk LCTRL, &sk LALT, &sk LCMD, &kp LG(G),               &none, &sk RCMD, &sk RALT, &sk RCTRL, &sk RSHIFT, &sk LC(LA(LCMD)),
+&none, &none, &none, &none, &kp LBRC, &kp RBRC, &trans, &trans,                       &none, &none, &none, &none, &none, &none,
+&trans, &trans, &trans, &trans, &kp LBKT, &kp RBKT, &none, &none,                     &ru_on, &ru_off, &trans, &trans, &trans, &trans
             )>;
         };
 
-        function {
-            label = "Function";
+        system {
+            label = "System";
             bindings = < LAYER_FROM64( \
-&kp GRAVE, &kp F5,  &kp F6,   &kp F7,   &kp F8,   &trans,                    &trans,  &trans,  &trans,   &trans,   &trans,   &trans,
-&trans,    &kp F1,  &kp F2,   &kp F3,   &kp F4,   &trans,                    &trans,  &kp F1,  &kp F2,   &kp F3,   &kp F4,   &trans,
-&trans,    &kp F5,  &kp F6,   &kp F7,   &kp F8,   &trans,                    &trans,  &kp F5,  &kp F6,   &kp F7,   &kp F8,   &trans,
-&trans,    &kp F9,  &kp F10,  &kp F11,  &kp F12,  &trans,  &trans,  &trans,  &trans,  &kp F9,  &kp F10,  &kp F11,  &kp F12,  &trans,
-&trans,    &trans,  &trans,   &trans,   &trans,   &trans,  &trans,  &trans,  &trans,  &trans,  &trans,   &trans,   &trans,   &trans
-            )>;
-        };
-
-        mouse {
-            label = "Mouse";
-            bindings = < LAYER_FROM64( \
-&trans,    &trans,  &trans,   &trans,   &trans,   &trans,                    &trans,  &trans,   &trans,   &trans,   &trans,   &trans,
-&trans,    &trans,  &trans,   &trans,   &trans,   &out OUT_TOG,              &trans,  &trans,   &trans,   &trans,   &trans,   &trans,
-&trans,    &trans,  &trans,   &trans,   &trans,   &trans,                    &trans,  &mkp MB1, &mkp MB3, &mkp MB2,   &trans,   &trans,
-&trans,    &trans,  &trans,   &trans,   &trans,   &trans,  &trans,  &trans,  &trans,  &trans,   &trans,   &trans,   &trans,   &trans,
-&trans,    &trans,  &trans,   &trans,   &trans,   &trans,  &trans,  &trans,  &trans,  &trans,   &trans,   &trans,   &trans,   &trans
+&trans, &trans, &trans, &trans, &trans, &trans,                                          &trans, &trans, &trans, &trans, &trans, &trans,
+&none, &none, &none, &none, &none, &none,                                              &bt BT_PRV, &bt BT_NXT, &none, &none, &none, &none,
+&none, &none, &none, &none, &none, &none,                                              &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &none, &none, &ext_power EP_OFF,
+&soft_off, &none, &none, &none, &none, &none, &trans, &trans,                         &bt BT_DISC 0, &bt BT_DISC 1, &bt BT_DISC 2, &bt BT_CLR_ALL, &none, &studio_unlock,
+&trans, &trans, &trans, &trans, &upd_fw_l, &bootloader, &none, &none,                  &bootloader, &upd_fw_r, &trans, &trans, &trans, &trans
             )>;
         };
     };
