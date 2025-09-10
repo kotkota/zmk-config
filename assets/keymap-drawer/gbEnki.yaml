@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: gbEnki, layout_name: default_layout}
 layers:
   Default:
-  - {t: '$$mdi:keyboard-esc$$', h: System}
+  - {t: Esc, h: System}
   - {t: Q, h: '!'}
   - W
   - E
@@ -12,21 +12,21 @@ layers:
   - I
   - O
   - P
-  - {t: '[', s: '{'}
-  - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:rhombus-outline$$'}
-  - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: D, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: F, h: '$$mdi:apple-keyboard-command$$'}
+  - '['
+  - {t: ↹, h: Ctl+Alt+LCMD}
+  - {t: A, h: LSHIFT}
+  - {t: S, h: Ctrl}
+  - {t: D, h: Alt}
+  - {t: F, h: LCMD}
   - G
   - H
-  - {t: J, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: K, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: L, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
-  - {t: '''', h: '$$mdi:rhombus-outline$$'}
+  - {t: J, h: RCMD}
+  - {t: K, h: Alt}
+  - {t: L, h: Ctrl}
+  - {t: ;, h: RSHIFT}
+  - {t: '''', h: Ctl+Alt+LCMD}
   - {t: '`', h: Shortcuts}
-  - {t: Z, h: '$$mdi:apple-keyboard-caps$$'}
+  - {t: Z, h: Caps Lock}
   - X
   - C
   - V
@@ -35,60 +35,60 @@ layers:
   - M
   - ','
   - .
-  - {t: /, h: '?', s: '?'}
+  - {t: /, h: '?'}
   - {t: \, h: Shortcuts}
-  - {t: '$$mdi:backspace$$', h: FN / Sym}
-  - {t: '$$mdi:keyboard-space$$', h: Num / Nav}
-  - {t: '$$mdi:keyboard-return$$', h: Sticky mods}
-  - {t: '$$mdi:keyboard-return$$', h: Sticky mods}
-  - {t: '$$mdi:keyboard-space$$', h: Num / Nav}
-  - {t: '$$mdi:backspace$$', h: FN / Sym}
+  - {t: ⌫, h: FN / Sym}
+  - {t: ␣, h: Num / Nav}
+  - {t: ENTER, h: Sticky mods}
+  - {t: ENTER, h: Sticky mods}
+  - {t: ␣, h: Num / Nav}
+  - {t: ⌫, h: FN / Sym}
   Russian:
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: P, s: O}
-  - {t: Щ, s: P}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ':', h: ;}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: Э, h: '?'}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
+  - {t: '[', s: P}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Sft+5, h: Sft+8}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '''', h: '?'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   Game:
-  - $$mdi:keyboard-esc$$
-  - $$mdi:keyboard-tab$$
+  - Esc
+  - ↹
   - Q
   - W
   - E
@@ -98,9 +98,9 @@ layers:
   - I
   - O
   - P
-  - {t: '[', s: '{'}
+  - '['
   - B
-  - $$mdi:apple-keyboard-shift$$
+  - Shift
   - A
   - S
   - D
@@ -109,10 +109,10 @@ layers:
   - J
   - K
   - L
-  - {t: ;, s: ':'}
+  - ;
   - ''''
-  - {t: '$$mdi:keyboard-return$$', h: Num / Nav}
-  - $$mdi:apple-keyboard-control$$
+  - {t: ENTER, h: Num / Nav}
+  - Ctrl
   - Z
   - X
   - C
@@ -121,57 +121,57 @@ layers:
   - M
   - ','
   - .
-  - {t: /, s: '?'}
+  - /
   - \
   - {t: T, h: H}
-  - $$mdi:keyboard-space$$
+  - ␣
   - G
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-command$$
+  - ⌫
+  - Alt
+  - LCMD
   Num / Nav:
-  - {t: ◌, type: trans}
+  - {t: ▽, type: trans}
   - ''
-  - {t: '7', s: '&'}
-  - {t: '8', s: '*'}
-  - {t: '9', s: (}
-  - {t: +, h: '*'}
-  - $$mdi:arrow-top-left$$
-  - $$mdi:arrow-collapse-left$$
-  - $$mdi:arrow-up$$
-  - $$mdi:arrow-collapse-right$$
-  - $$mdi:arrow-bottom-right$$
+  - '7'
+  - '8'
+  - '9'
+  - {t: +, h: KP ASTERISK}
+  - Home
+  - Alt+←
+  - ↑
+  - Alt+→
+  - End
   - ''
-  - {t: ◌, type: trans}
-  - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
-  - {t: '4', h: '$$mdi:apple-keyboard-control$$', s: $}
-  - {t: '5', h: '$$mdi:apple-keyboard-option$$', s: '%'}
-  - {t: '6', h: '$$mdi:apple-keyboard-command$$', s: ^}
-  - {t: '-', h: /}
-  - $$mdi:transfer-up$$
-  - $$mdi:arrow-left$$
-  - $$mdi:arrow-down$$
-  - $$mdi:arrow-right$$
+  - {t: ▽, type: trans}
+  - {t: ;, h: LSHIFT}
+  - {t: '4', h: Ctrl}
+  - {t: '5', h: Alt}
+  - {t: '6', h: LCMD}
+  - {t: '-', h: KP DIVIDE}
+  - Page Up
+  - ←
+  - ↓
+  - →
   - ''
   - ''
-  - {type: held alternate}
-  - '='
-  - {t: '1', s: '!'}
-  - {t: '2', s: '@'}
-  - {t: '3', s: '#'}
-  - {t: '0', s: )}
-  - $$mdi:transfer-down$$
-  - {t: '⌘[', s: '⌘{'}
-  - {t: '⌘]', s: '⌘}'}
-  - $$mdi:arrow-expand-left$$
-  - $$mdi:arrow-expand-right$$
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
+  - {t: ▽, type: trans}
+  - KP EQUAL
+  - '1'
+  - '2'
+  - '3'
+  - '0'
+  - Page Down
+  - Gui+[
+  - Gui+]
+  - Sft+Ctl+↹
+  - Ctl+↹
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   - ''
-  - {t: ◌, type: trans}
-  - {type: held alternate}
-  - {t: ◌, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   FN / Sym:
   - F1
   - F2
@@ -184,7 +184,7 @@ layers:
   - '#'
   - $
   - '%'
-  - {t: ◌, type: trans}
+  - {t: ▽, type: trans}
   - F7
   - F8
   - F9
@@ -196,41 +196,41 @@ layers:
   - '*'
   - (
   - )
-  - {t: ◌, type: trans}
-  - {t: /, h: '?', s: '?'}
-  - {t: (, h: ()}
-  - {t: <, h: <>}
-  - {t: '[', h: '[]'}
-  - {t: '{', h: '{}'}
+  - {t: ▽, type: trans}
+  - {t: /, h: '?'}
+  - '&macro_pair LPAR RPAR'
+  - '&macro_pair LT GT'
+  - '&macro_pair LBKT RBKT'
+  - '&macro_pair LBRC RBRC'
   - {t: \, h: '|'}
   - {t: '|', h: \}
   - '{'
   - '}'
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
+  - '['
+  - ']'
   - '?'
   - {type: held}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {t: ◌, type: trans}
-  - {type: held alternate}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   Shortcuts:
   - ''
-  - {t: ⇧⌘1, s: ⇧⌘!}
-  - {t: ⇧⌘2, s: ⇧⌘@}
-  - {t: ⌘⇧3, s: ⌘⇧#}
-  - {t: ⇧⌘4, s: ⇧⌘$}
-  - {t: ⇧⌘5, s: ⇧⌘%}
+  - Sft+Gui+1
+  - Sft+Gui+2
+  - Gui+Sft+3
+  - Sft+Gui+4
+  - Sft+Gui+5
   - ''
   - ''
   - ''
-  - $$mdi:play-pause$$
-  - $$mdi:volume-low$$
-  - $$mdi:volume-high$$
+  - '&playnp'
+  - Vol Down
+  - Vol Up
   - ''
-  - $$mdi:pan-left$$
-  - $$mdi:pan-right$$
+  - Ctl+←
+  - Ctl+→
   - ''
   - ''
   - ''
@@ -241,8 +241,8 @@ layers:
   - ''
   - ''
   - {type: held}
-  - $$mdi:undo-variant$$
-  - $$mdi:redo-variant$$
+  - Gui+Z
+  - Gui+Sft+Z
   - ''
   - ''
   - ''
@@ -251,38 +251,38 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held alternate}
-  - $$mdi:backspace-reverse-outline$$
+  - ''
+  - ⌦
   - ''
   - ''
   - ''
   - ''
-  - $$mdi:backspace-reverse-outline$$
+  - ⌦
   Sticky mods:
   - ''
   - ''
-  - $$mdi:arrow-left-box$$
-  - $$mdi:arrow-right-box$$
-  - ⌘R
-  - ⌘T
+  - Gui+←
+  - Gui+→
+  - Gui+R
+  - Gui+T
+  - ''
+  - '&mkp MB1'
+  - '&mkp MB3'
+  - '&mkp MB2'
   - ''
   - ''
+  - {t: Ctl+Alt+LCMD, h: sticky}
+  - {t: LSHIFT, h: sticky}
+  - {t: Ctrl, h: sticky}
+  - {t: Alt, h: sticky}
+  - {t: LCMD, h: sticky}
+  - Gui+G
   - ''
-  - ''
-  - ''
-  - ''
-  - {t: '$$mdi:rhombus-outline$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-command$$', h: '$$mdi:gesture-tap-hold$$'}
-  - ⌘G
-  - ''
-  - {t: '$$mdi:apple-keyboard-command$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:rhombus-outline$$', h: '$$mdi:gesture-tap-hold$$'}
+  - {t: RCMD, h: sticky}
+  - {t: Alt, h: sticky}
+  - {t: Ctrl, h: sticky}
+  - {t: RSHIFT, h: sticky}
+  - {t: Ctl+Alt+LCMD, h: sticky}
   - ''
   - ''
   - ''
@@ -295,12 +295,12 @@ layers:
   - ''
   - ''
   - ''
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
+  - '['
+  - ']'
   - {type: held}
-  - {type: held alternate}
-  - $$mdi:flag$$
-  - $$mdi:flag-outline$$
+  - ''
+  - '&ru_on'
+  - '&ru_off'
   System:
   - {type: held}
   - ''
@@ -313,122 +313,123 @@ layers:
   - ''
   - ''
   - ''
+  - OUT TOG
   - ''
   - ''
   - ''
   - ''
   - ''
   - ''
-  - ''
-  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
-  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
-  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - BT 1
+  - BT 2
+  - BT 3
   - ''
   - ''
   - EP OFF
-  - $$mdi:power-standby$$
+  - '&soft_off'
   - ''
   - ''
   - ''
   - ''
   - ''
-  - {t: '$$mdi:bluetooth-off$$', h: '0'}
-  - {t: '$$mdi:bluetooth-off$$', h: '1'}
-  - {t: '$$mdi:bluetooth-off$$', h: '2'}
+  - {t: BT DISC, h: '0'}
+  - {t: BT DISC, h: '1'}
+  - {t: BT DISC, h: '2'}
   - BT CLR ALL
   - ''
-  - $$mdi:lock-open-variant-outline$$
-  - $$mdi:reload-alert$$
-  - $$mdi:console$$
+  - '&studio_unlock'
+  - '&upd_fw_l'
+  - Boot
   - ''
   - ''
-  - $$mdi:console$$
-  - $$mdi:reload-alert$$
+  - Boot
+  - '&upd_fw_r'
 combos:
 - p: [35, 24]
-  k: {t: Game, h: '$$mdi:toggle-switch$$'}
+  k: {t: Game, h: toggle}
   l: [Default, Game, Russian]
-  a: bottom
 - p: [14, 21]
-  k: $$mdi:star-four-points-circle$$
+  k: F13
   l: [Default, Russian]
 - p: [8, 9]
   k: O
   l: [Russian]
 - p: [31, 32]
-  k: Ъ
+  k: ']'
   l: [Russian]
 - p: [4, 5]
-  k: Ё
+  k: \
   l: [Russian]
 - p: [1, 13]
-  k: {t: '!', h: ⌥1}
+  k: {t: Sft+1, h: Alt+1}
   l: [Default, Russian]
 - p: [2, 14]
-  k: {t: '@', h: ⌥2}
+  k: {t: Sft+2, h: Alt+2}
   l: [Default, Russian]
 - p: [3, 15]
-  k: {t: '#', h: ⌥3}
+  k: {t: Sft+3, h: Alt+3}
   l: [Default, Russian]
 - p: [4, 16]
-  k: {t: $, h: ⌥4}
+  k: {t: Sft+4, h: Alt+4}
   l: [Default, Russian]
 - p: [17, 5]
-  k: {t: '%', h: ⌥5}
+  k: {t: Sft+5, h: Alt+5}
   l: [Default, Russian]
 - p: [6, 18]
-  k: {t: ^, h: ⌥6}
+  k: {t: Sft+6, h: Alt+6}
   l: [Default, Russian]
 - p: [7, 19]
-  k: {t: '&', h: ⌥7}
+  k: {t: Sft+7, h: Alt+7}
   l: [Default, Russian]
 - p: [8, 20]
-  k: {t: '*', h: ⌥8}
+  k: {t: Sft+8, h: Alt+8}
   l: [Default, Russian]
 - p: [9, 21]
-  k: {t: (, h: ⌥9}
+  k: {t: Sft+9, h: Alt+9}
   l: [Default, Russian]
+  draw_separate: true
 - p: [10, 22]
-  k: {t: ), h: ⌥0}
+  k: {t: Sft+0, h: Alt+0}
   l: [Default, Russian]
+  draw_separate: true
 - p: [8, 7]
-  k: {t: _, h: '...'}
+  k: {t: Sft+-, h: Alt+;}
   l: [Default, Russian]
 - p: [18, 19]
   k: {t: '=', h: +}
   l: [Default, Russian]
 - p: [20, 19]
-  k: {t: '-', h: —}
+  k: {t: '-', h: Alt+Sft+-}
   l: [Default, Russian]
 - p: [32, 31]
-  k: {t: '''', h: ''''''}
+  k: {t: '''', h: '&macro_double SQT'}
   l: [Default]
 - p: [32, 33]
-  k: {t: '"', h: '""'}
+  k: {t: '"', h: '&macro_double DQT'}
   l: [Default]
 - p: [32, 33]
-  k: {t: '"', h: '""'}
+  k: {t: Sft+2, h: '&macro_double LS(NUMBER_2)'}
   l: [Russian]
 - p: [33, 34]
-  k: {t: '`', h: '``'}
+  k: {t: '`', h: '&macro_double GRAVE'}
   l: [Default]
 - p: [8, 9]
-  k: {t: '$$mdi:backspace-reverse-outline$$', h: '⌥$$mdi:backspace-reverse-outline$$'}
+  k: {t: ⌦, h: Alt+⌦}
   l: [Num / Nav]
 - p: [7, 8]
-  k: {t: '$$mdi:backspace$$', h: '⌥$$mdi:backspace$$'}
+  k: {t: ⌫, h: Alt+⌫}
   l: [Num / Nav]
 - p: [11, 10]
-  k: $$mdi:volume-off$$
+  k: MUTE
   l: [Shortcuts]
 - p: [2, 3]
-  k: {t: '$$mdi:content-copy$$', h: '$$mdi:content-cut$$'}
+  k: {t: Gui+C, h: Gui+X}
   l: [Default, Russian]
 - p: [3, 4]
-  k: {t: '$$mdi:content-paste$$', h: '$$mdi:invoice-text-multiple$$'}
+  k: {t: Gui+V, h: Alt+Ctl+V}
   l: [Default, Russian]
 - p: [16, 17]
-  k: {t: '$$mdi:code-tags$$', h: '$$mdi:xml$$'}
+  k: {t: '&tag_open', h: '&tag_close'}
   l: [Default, Russian]
 - p: [28, 29]
   k: '&equals_qoute'
@@ -437,43 +438,38 @@ combos:
   k: '&macro_pair LS(LA(EQUAL)) LA(EQUAL)'
   l: [Russian]
 - p: [13, 26]
-  k: {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
+  k: {t: Shift, h: sticky}
   l: [Default, Russian]
 - p: [33, 22]
-  k: {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
+  k: {t: Shift, h: sticky}
   l: [Default, Russian]
 - p: [25, 26]
-  k: $$mdi:code-parentheses$$
+  k: '&par'
   l: [Num / Nav]
 - p: [26, 27]
-  k: $$mdi:code-brackets$$
+  k: '&bkt'
   l: [Num / Nav]
 - p: [27, 28]
-  k: $$mdi:code-braces$$
+  k: '&brc'
   l: [Num / Nav]
 - p: [26, 27]
   k: {t: ',', h: ;}
   l: [Default]
 - p: [26, 27]
-  k: {t: ',', h: ;}
+  k: {t: Sft+6, h: Sft+8}
   l: [Russian]
 - p: [27, 28]
   k: {t: ., h: ':'}
   l: [Default]
 - p: [28, 27]
-  k: {t: ., h: ':'}
+  k: {t: Sft+7, h: Sft+5}
   l: [Russian]
 - p: [33, 34]
-  k: {t: /, s: '?'}
+  k: /
   l: [Russian]
 - p: [15, 14, 16]
-  k: $$mdi:flag$$
+  k: '&ru_on'
   l: [Russian, Default]
-  a: bottom
 - p: [27, 26, 28]
-  k: $$mdi:flag-outline$$
-  l: [Russian, Default]
-  a: bottom
-- p: [25, 26]
-  k: $$mdi:progress-star-four-points$$
+  k: '&ru_off'
   l: [Russian, Default]
