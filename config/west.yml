@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: garrettfaucher
       url-base: https://github.com/garrettfaucher
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,5 +17,14 @@ manifest:
     - name: zmk-driver-pmw3360
       remote: garrettfaucher
       revision: invert-x-y
+    - name: zmk-leader-key
+      remote: urob
+      revision: v0.3
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: v0.3
+    - name: zmk-auto-layer
+      remote: urob
+      revision: v0.3
   self:
     path: config
