@@ -57,7 +57,7 @@
       ru_off: to_en {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
-          bindings = <&tog_off 1 &kp LS(LA(LC(LG(M))))>;
+          bindings = <&tog_off RU &kp LS(LA(LC(LG(M))))>;
       };
 
       tag_open: html_tag_open {

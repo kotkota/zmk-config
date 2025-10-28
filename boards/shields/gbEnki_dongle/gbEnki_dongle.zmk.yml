@@ -1,0 +1,15 @@
+file_format: "1"
+id: gbEnki
+name: The gbEnki
+type: shield
+url: https://github.com/aroum/zmk-config-gbEnki
+requires: [pro_micro]
+# exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - studio
+siblings:
+  - gbEnki_dongle_left
+  - gbEnki_dongle_right
+  - gbEnki_dongle_dongle
