@@ -42,11 +42,11 @@
         default_layer {
             label = "Qwerty";
             bindings = < LAYER_FROM64( \
-&kp ESCAPE,            &kp N1,        &kp N2,       &kp N3,      &kp N4,         &kp N5,                                              &kp N6,          &kp N7,           &kp N8,      &kp N9,       &kp N0,           &kp BACKSPACE,
-&lt SYS ESC,           &mt EXCL Q,    &kp W,        &kp E,       &kp R,          &kp T,                                               &kp Y,           &kp U,            &kp I,       &kp O,        &kp P,            &kp LBKT,
-&mt LC(LA(LCMD)) TAB,  &mtl LSHIFT A,  &mtl LCTRL S,  &mtl LALT D,  &mtl LCMD F, &kp G,                                               &kp H,           &mtr RCMD J,       &mtr RALT K,  &mtr RCTRL L,  &mtr RSHIFT SEMI,  &mt LC(LA(LCMD)) SQT,
-&lt MEDIA GRAVE,       &mt CAPS Z,    &kp X,        &kp C,       &kp V,          &kp B,           &kp C_PLAY_PAUSE,  &kp K_MUTE,      &kp N,           &kp M,            &kp COMMA,   &kp DOT,      &mt QMARK SLASH,  &lt MEDIA BSLH,
-___,                   ___,           ___,          ___,         &lt FUNC BSPC,  &lt NUMB SPACE,  &lt STCKY ENTER,  &lt STCKY ENTER,  &lt NUMB SPACE,  &lt FUNC BSPC,    ___,         &none,        &none,            &none
+&kp ESCAPE,            &kp N1,         &kp N2,        &kp N3,       &kp N4,       &kp N5,                                              &kp N6,         &kp N7,           &kp N8,       &kp N9,       &kp N0,           &kp BACKSPACE,
+&lt SYS ESC,           &mt EXCL Q,     &kp W,         &kp E,        &kp R,        &kp T,                                               &kp Y,          &kp U,            &kp I,        &kp O,        &kp P,            &kp LBKT,
+&mt LC(LA(LCMD)) TAB,  &mtl LSHIFT A,  &mtl LCTRL S,  &mtl LALT D,  &mtl LCMD F,  &kp G,                                               &kp H,          &mtr RCMD J,      &mtr RALT K,  &mtr RCTRL L,  &mtr RSHIFT SEMI,  &mt LC(LA(LCMD)) SQT,
+&lt MEDIA GRAVE,       &mt CAPS Z,     &kp X,         &kp C,        &kp V,        &kp B,           &kp C_PLAY_PAUSE,  &kp K_MUTE,      &kp N,          &kp M,            &kp COMMA,    &kp DOT,      &mt QMARK SLASH,  &lt MEDIA BSLH,
+___,                   ___,           ___,          ___,         &lt FUNC BSPC,  &lt NUMB SPACE,  &lt STCKY ENTER,  &lt STCKY ENTER,  &lt NUMB SPACE,  &lt FUNC BSPC,    ___,          &none,        &none,            &none
             )>;
             sensor-bindings =
               <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -93,11 +93,11 @@ ___,             ___,        ___,     ___,     &mt H T,  &kp SPACE,  &kp G,   &k
         num {
             label = "Num/Nav";
             bindings = < LAYER_FROM64( \
-___,     ___,              ___,           ___,          ___,          ___,                                     ___,        ___,           ___,           ___,              ___,          ___,
-___,     &none,            &kp N7,        &kp N8,       &kp N9,       &mt KP_ASTERISK PLUS,                    &kp HOME,   &kp LA(LEFT),  &kp UP,        &kp LA(RIGHT),    &kp END,      &none,
-___,     &mt LSHIFT SEMI,  &mt LCTRL N4,  &mt LALT N5,  &mt LCMD N6,  &mt KP_DIVIDE MINUS,                     &kp PG_UP,  &kp LEFT,      &kp DOWN,      &kp RIGHT,        &none,        &none,
-___,     &kp KP_EQUAL,     &kp N1,        &kp N2,       &kp N3,       &kp N0,                ___,     ___,     &kp PG_DN,  &kp LG(LBKT),  &kp LG(RBKT),  &kp RS(RC(TAB)),  &kp RC(TAB),  ___,
-___,     ___,              ___,           ___,          ___,          ___,                   &none,   ___,     ___,        ___,           ___,           &none,            &none,        &none
+___,     ___,                   ___,           ___,          ___,          ___,                        ___,        ___,           ___,           ___,              ___,          ___,
+___,     &kp KP_ASTERISK,       &kp N7,        &kp N8,       &kp N9,       &kp PLUS,                   &kp HOME,   &kp LA(LEFT),  &kp UP,        &kp LA(RIGHT),    &kp END,      &none,
+___,     &mt LSHIFT KP_DIVIDE,  &mt LCTRL N4,  &mt LALT N5,  &mt LCMD N6,  &kp MINUS,                  &kp PG_UP,  &kp LEFT,      &kp DOWN,      &kp RIGHT,        &none,        &none,
+___,     &kp KP_EQUAL,          &kp N1,        &kp N2,       &kp N3,       &kp N0,   ___,     ___,     &kp PG_DN,  &kp LG(LBKT),  &kp LG(RBKT),  &kp RS(RC(TAB)),  &kp RC(TAB),  ___,
+___,     ___,                   ___,           ___,          ___,          ___,      &none,   ___,     ___,        ___,           ___,           &none,            &none,        &none
             )>;
             sensor-bindings =
               <&inc_dec_kp RIGHT LEFT>,
@@ -107,11 +107,11 @@ ___,     ___,              ___,           ___,          ___,          ___,      
         symb {
             label = "FN/Sym";
             bindings = < LAYER_FROM64( \
-___,              ___,                    ___,                ___,                    ___,                    ___,                              ___,            ___,       ___,        ___,       ___,          ___,
-&kp F1,           &kp F2,                 &kp F3,             &kp F4,                 &kp F5,                 &kp F6,                           &kp EXCL,       &kp AT,    &kp POUND,  &kp DLLR,  &kp PERCENT,  ___,
-&kp F7,           &kp F8,                 &kp F9,             &kp F10,                &kp F11,                &kp F12,                          &kp CARET,      &kp AMPS,  &kp ASTRK,  &kp LPAR,  &kp RPAR,     ___,
-&mt QMARK SLASH,  &macro_pair LPAR RPAR,  &macro_pair LT GT,  &macro_pair LBKT RBKT,  &macro_pair LBRC RBRC,  &mt PIPE BSLH,  ___,     ___,     &mt BSLH PIPE,  &kp LBRC,  &kp RBRC,   &kp LBKT,  &kp RBKT,     &kp QMARK,
-___,              ___,                    ___,                ___,                    ___,                    ___,            ___,     ___,     ___,            ___,       ___,        &none,     &none,        &none
+___,              ___,            ___,        ___,            ___,            ___,                              ___,            ___,       ___,        ___,       ___,          ___,
+&kp F1,           &kp F2,         &kp F3,     &kp F4,         &kp F5,         &kp F6,                           &kp EXCL,       &kp AT,    &kp POUND,  &kp DLLR,  &kp PERCENT,  ___,
+&kp F7,           &kp F8,         &kp F9,     &kp F10,        &kp F11,        &kp F12,                          &kp CARET,      &kp AMPS,  &kp ASTRK,  &kp LPAR,  &kp RPAR,     ___,
+&mt QMARK SLASH,  &mt RPAR LPAR,  &mt GT LT,  &mt RBKT LBKT,  &mt RBRC LBRC,  &mt PIPE BSLH,  ___,     ___,     &mt BSLH PIPE,  &kp LBRC,  &kp RBRC,   &kp LBKT,  &kp RBKT,     &kp QMARK,
+___,              ___,            ___,        ___,            ___,            ___,            ___,     ___,     ___,            ___,       ___,        &none,     &none,        &none
             )>;
         };
 
